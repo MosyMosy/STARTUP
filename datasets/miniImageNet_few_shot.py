@@ -39,7 +39,8 @@ def construct_subset(dataset, split):
     dataset_subset.targets = targets
     return dataset_subset
 
-identity = lambda x:x
+# identity = lambda x:x
+def identity(x): return x
 
 class SimpleDataset:
     def __init__(self, transform, target_transform=identity, split=None):
