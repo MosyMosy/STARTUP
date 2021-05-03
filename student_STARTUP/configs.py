@@ -3,7 +3,7 @@
 miniImageNet_path = '/scratch/datasets/CD-FSL/miniImageNet_test'
 tiered_ImageNet_path = '/scratch/datasets/tiered_imagenet/tiered_imagenet/original_split/test'
 
-ISIC_path = "/scratch/datasets/CD-FSL/ISIC"
-ChestX_path = "/scratch/datasets/CD-FSL/chestX"
-CropDisease_path = "/scratch/datasets/CD-FSL/CropDiseases"
-EuroSAT_path = "/scratch/datasets/CD-FSL/EuroSAT/2750"
+ISIC_path = "../dataset/ISIC2018"
+ChestX_path = "../dataset/ChestX-Ray8"
+CropDisease_path = "../dataset/plant-disease"
+EuroSAT_path = "../dataset/EuroSAT/2750"

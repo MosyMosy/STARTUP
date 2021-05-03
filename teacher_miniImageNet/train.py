@@ -5,6 +5,8 @@ import torch.optim
 import torch.optim.lr_scheduler as lr_scheduler
 # import time
 import os
+import sys
+sys.path.append(os.path.join(os.path.dirname(os.path.abspath(__file__)),'..'))
 # import glob
 
 import configs

@@ -10,6 +10,9 @@ import argparse
 import os
 import numpy as np
 
+import sys
+sys.path.append(os.path.join(os.path.dirname(os.path.abspath(__file__)),'..'))
+
 import utils
 import data
 
@@ -17,7 +20,7 @@ import time
 import models
 
 
-import wandb
+# import wandb
 import warnings
 
 import random 
@@ -121,11 +124,11 @@ def main(args):
     trainlog = utils.savelog(args.dir, 'train')
     vallog = utils.savelog(args.dir, 'val')
 
-    wandb.init(project='STARTUP',
-               group=__file__,
-               name=f'{__file__}_{args.dir}')
+    # wandb.init(project='STARTUP',
+    #            group=__file__,
+    #            name=f'{__file__}_{args.dir}')
 
-    wandb.config.update(args)
+    # wandb.config.update(args)
 
     for arg in vars(args):
         logger.info(f"{arg}: {getattr(args, arg)}")
