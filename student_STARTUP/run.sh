@@ -1,15 +1,12 @@
 #!/bin/bash
-
 # bash script to train STARTUP representation with SimCLR self-supervision
 export CUDA_VISIBLE_DEVICES=0
-
 ##############################################################################################
 # Train student representation using MiniImageNet as the source 
 ##############################################################################################
 # Before running the commands, please take care of the TODO appropriately
 for target_testset in "EuroSAT" "ISIC" "CropDisease" "ChestX" "miniImageNet_test"
-do
-    # TODO: Please set the following argument appropriately 
+do  # TODO: Please set the following argument appropriately 
     # --teacher_path: filename for the teacher model
     # --base_path: path to find base dataset
     # --dir: directory to save the student representation. 

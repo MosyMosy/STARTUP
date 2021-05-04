@@ -18,10 +18,8 @@ source ~/STARTUP_ENV/bin/activate
 
 cd $SLURM_TMPDIR
 mkdir STARTUP
-
 cd STARTUP
 unzip ~/scratch/STARTUP.zip
-
 
 mkdir dataset
 cd dataset
@@ -48,6 +46,3 @@ bash run.sh
 
 cd $SLURM_TMPDIR
 zip -r ~/scratch/student_models.zip $SLURM_TMPDIR/STARTUP/student_STARTUP/
-
-
-
