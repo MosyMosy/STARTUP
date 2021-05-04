@@ -17,9 +17,9 @@ nvidia-smi
 source ~/STARTUP_ENV/bin/activate
 
 cd $SLURM_TMPDIR
-mkdir STARTUP
+
+cp -r ~/scratch/STARTUP .
 cd STARTUP
-unzip ~/scratch/STARTUP.zip
 
 mkdir dataset
 cd dataset
@@ -29,20 +29,16 @@ mkdir ChestX-Ray8 EuroSAT ISIC2018 plant-disease
 
 cd EuroSAT
 unzip ~/scratch/CD-FSL_Datasets/EuroSAT.zip
-cd ..
-cd ChestX-Ray8
-unzip ~/scratch/CD-FSL_Datasets/ChestX-Ray8.zip
-cd ..
-cd ISIC2018
-unzip ~/scratch/CD-FSL_Datasets/ISIC2018.zip
-cd ..
-cd plant-disease
-unzip ~/scratch/CD-FSL_Datasets/plant-disease.zip
+
 
 cd $SLURM_TMPDIR
+
 cd STARTUP
 cd student_STARTUP
 bash run.sh
 
 cd $SLURM_TMPDIR
 zip -r ~/scratch/student_models.zip $SLURM_TMPDIR/STARTUP/student_STARTUP/
+
+
+

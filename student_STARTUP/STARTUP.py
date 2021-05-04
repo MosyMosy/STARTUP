@@ -4,6 +4,8 @@ from torch.nn import functional as F
 from torchvision import transforms, datasets
 import torch.utils.data
 
+torch.cuda.empty_cache()
+
 from tqdm import tqdm
 import argparse
 
@@ -115,6 +117,7 @@ def pseudolabel_dataset(embedding, clf, dataset, transform, transform_test, para
     return dataset
 
 def main(args):
+    torch.cuda.empty_cache()
     # Set the scenes
     if not os.path.isdir(args.dir):
         os.makedirs(args.dir)
@@ -163,6 +166,7 @@ def main(args):
     # specified at args.teacher_path
     if args.teacher_path is not None:
         if args.teacher_path_version == 0:
+            print(os.path.dirname(os.path.abspath(__file__)))
             state = torch.load(args.teacher_path)['state']
             clf_state = OrderedDict()
             state_keys = list(state.keys())
