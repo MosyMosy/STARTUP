@@ -37,7 +37,7 @@ do
     --batch_validate \
     --resume_latest 
 
-    zip -r ~/scratch/$target_testset\_na.zip $SLURM_TMPDIR/STARTUP/student_STARTUP_na/miniImageNet_source/$target_testset\_unlabeled_20
+    # zip -r ~/scratch/$target_testset\_na.zip $SLURM_TMPDIR/STARTUP/student_STARTUP_na/miniImageNet_source/$target_testset\_unlabeled_20
 done
 
 echo finish

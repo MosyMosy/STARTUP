@@ -30,19 +30,19 @@ unzip ~/scratch/CD-FSL_Datasets/miniImagenet.zip
 
 mkdir ChestX-Ray8 EuroSAT ISIC2018 plant-disease
 
-# cd EuroSAT
-# unzip ~/scratch/CD-FSL_Datasets/EuroSAT.zip
-# cd ..
+cd EuroSAT
+unzip ~/scratch/CD-FSL_Datasets/EuroSAT.zip
+cd ..
 
-# cd ChestX-Ray8
-# unzip ~/scratch/CD-FSL_Datasets/ChestX-Ray8.zip
-# mkdir images
-# find . -type f -name '*.png' -print0 | xargs -0 mv -t images
+cd ChestX-Ray8
+unzip ~/scratch/CD-FSL_Datasets/ChestX-Ray8.zip
+mkdir images
+find . -type f -name '*.png' -print0 | xargs -0 mv -t images
 
-# cd ..
-# cd ISIC2018
-# unzip ~/scratch/CD-FSL_Datasets/ISIC2018.zip
-# unzip ~/scratch/CD-FSL_Datasets/ISIC2018_GroundTruth.zip
+cd ..
+cd ISIC2018
+unzip ~/scratch/CD-FSL_Datasets/ISIC2018.zip
+unzip ~/scratch/CD-FSL_Datasets/ISIC2018_GroundTruth.zip
 
 # cd ..
 cd plant-disease
@@ -57,7 +57,17 @@ cd src
 # cd student_STARTUP
 # bash run.sh
 # cd $SLURM_TMPDIR
-# zip -r ~/scratch/student_models.zip $SLURM_TMPDIR/STARTUP/src/student_STARTUP/
+# zip -r ~/scratch/student_models_na.zip $SLURM_TMPDIR/STARTUP/src/student_STARTUP/
+
+cd student_STARTUP_na
+bash run.sh
+cd $SLURM_TMPDIR
+zip -r ~/scratch/student_models.zip $SLURM_TMPDIR/STARTUP/src/student_STARTUP_na/
+
+# cd student_STARTUP_na
+# bash run.sh
+# cd $SLURM_TMPDIR
+# zip -r ~/scratch/student_models_frozenteacher.zip $SLURM_TMPDIR/STARTUP/src/student_STARTUP_na/
 
 # cd evaluation
 # bash run.sh

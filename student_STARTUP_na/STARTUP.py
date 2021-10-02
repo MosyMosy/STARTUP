@@ -370,9 +370,12 @@ def main(args):
     ###########################
     # Create Optimizer
     ###########################
-
-    optimizer = torch.optim.SGD([
-            {'params': backbone.parameters()},
+        for layer in backbone.modules():
+            if isinstance(layer, nn.BatchNorm2d):
+                layer.bias.requires_grad = False
+                layer.weight.requires_grad = False
+        optimizer = torch.optim.SGD([
+            {'params': filter(lambda p: p.requires_grad, backbone.parameters())},
             {'params': clf.parameters()},
             {'params': clf_SIMCLR.parameters()}
         ],
@@ -485,11 +488,15 @@ def main(args):
             clf_SIMCLR.load_state_dict(sd_head_SIMCLR)
 
             # create the optimizer
+            for layer in backbone.modules():
+                if isinstance(layer, nn.BatchNorm2d):
+                    layer.bias.requires_grad = False
+                    layer.weight.requires_grad = False
             optimizer = torch.optim.SGD([
-                {'params': backbone.parameters()},
-                {'params': clf.parameters()},
-                {'params': clf_SIMCLR.parameters()}
-            ],
+            {'params': filter(lambda p: p.requires_grad, backbone.parameters())},
+            {'params': clf.parameters()},
+            {'params': clf_SIMCLR.parameters()}
+        ],
                 lr=current_lr, momentum=0.9,
                 weight_decay=args.wd,
                 nesterov=False)
@@ -518,8 +525,12 @@ def main(args):
         clf_SIMCLR.load_state_dict(sd_head_SIMCLR)
             
         logger.info(f"** Learning with lr: {current_lr}")
+        for layer in backbone.modules():
+            if isinstance(layer, nn.BatchNorm2d):
+                layer.bias.requires_grad = False
+                layer.weight.requires_grad = False
         optimizer = torch.optim.SGD([
-            {'params': backbone.parameters()},
+            {'params': filter(lambda p: p.requires_grad, backbone.parameters())},
             {'params': clf.parameters()},
             {'params': clf_SIMCLR.parameters()}
         ],

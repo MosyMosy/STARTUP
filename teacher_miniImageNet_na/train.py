@@ -26,7 +26,11 @@ import random
 
 def train(base_loader, model, optimization, start_epoch, stop_epoch, params, logger):    
     if optimization == 'Adam':
-        optimizer = torch.optim.Adam(model.parameters())
+        for layer in model.modules():
+            if isinstance(layer, nn.BatchNorm2d):
+                layer.bias.requires_grad = False
+                layer.weight.requires_grad = False
+        optimizer = torch.optim.Adam(filter(lambda p: p.requires_grad, model.parameters()))
     else:
        raise ValueError('Unknown optimization, please define by yourself')     
 
