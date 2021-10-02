@@ -46,11 +46,11 @@ def train(base_loader, model, optimization, start_epoch, stop_epoch, params, log
             torch.save({'epoch':epoch, 'state':model.state_dict(), 
                         'optimizer': optimizer.state_dict()}, outfile)
 
-        print({'loss': perf['Loss/avg']}, step=epoch+1)
-        print({'top1': perf['top1/avg'],
-                'top5': perf['top5/avg'],
-                'top1_per_class': perf['top1_per_class/avg'],
-                'top5_per_class': perf['top5_per_class/avg']}, step=epoch+1)
+        # print({'loss': perf['Loss/avg']}, step=epoch+1)
+        # print({'top1': perf['top1/avg'],
+        #         'top5': perf['top5/avg'],
+        #         'top1_per_class': perf['top1_per_class/avg'],
+        #         'top5_per_class': perf['top5_per_class/avg']}, step=epoch+1)
         
     return model
 
