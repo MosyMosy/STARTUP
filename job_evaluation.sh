@@ -5,7 +5,7 @@
 #SBATCH --mail-type=FAIL
 #SBATCH --mail-type=REQUEUE
 #SBATCH --mail-type=ALL
-#SBATCH --job-name=STARTUP_teacher
+#SBATCH --job-name=STARTUP_Evaluation
 #SBATCH --output=%x-%j.out
 #SBATCH --nodes=1
 #SBATCH --gres=gpu:4
@@ -46,11 +46,13 @@ cd ..
 cd plant-disease
 unzip ~/scratch/CD-FSL_Datasets/plant-disease.zip
 
+
 cd $SLURM_TMPDIR
 
 cd STARTUP
 
-cd teacher_miniImageNet_na
+cd evaluation
 bash run.sh
 cd $SLURM_TMPDIR
-zip -r ~/scratch/teacher_miniImageNet_na.zip $SLURM_TMPDIR/STARTUP/teacher_miniImageNet_na/
+zip -r ~/scratch/STARTUP/evaluation.zip $SLURM_TMPDIR/STARTUP/evaluation/
+

@@ -1,9 +1,10 @@
 
 # TODO: Please set the directory to the target datasets accordingly
-miniImageNet_path = '/scratch/datasets/CD-FSL/miniImageNet_test'
 tiered_ImageNet_path = '/scratch/datasets/tiered_imagenet/tiered_imagenet/original_split/test'
 
-ISIC_path = "/scratch/datasets/CD-FSL/ISIC"
-ChestX_path = "/scratch/datasets/CD-FSL/chestX"
-CropDisease_path = "/scratch/datasets/CD-FSL/CropDiseases"
-EuroSAT_path = "/scratch/datasets/CD-FSL/EuroSAT/2750"
+miniImageNet_path = '../datasets/miniImagenet'
+
+ISIC_path = "../datasets/ISIC2018"
+ChestX_path = "../datasets/ChestX-Ray8"
+CropDisease_path = "../datasets/plant-disease"
+EuroSAT_path = "../datasets/EuroSAT/2750"

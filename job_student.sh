@@ -22,10 +22,8 @@ cd $SLURM_TMPDIR
 
 cp -r ~/scratch/STARTUP .
 cd STARTUP
-cd src
 
-mkdir dataset
-cd dataset
+cd datasets
 unzip ~/scratch/CD-FSL_Datasets/miniImagenet.zip
 
 mkdir ChestX-Ray8 EuroSAT ISIC2018 plant-disease
@@ -44,7 +42,7 @@ cd ISIC2018
 unzip ~/scratch/CD-FSL_Datasets/ISIC2018.zip
 unzip ~/scratch/CD-FSL_Datasets/ISIC2018_GroundTruth.zip
 
-# cd ..
+cd ..
 cd plant-disease
 unzip ~/scratch/CD-FSL_Datasets/plant-disease.zip
 
@@ -53,34 +51,7 @@ cd $SLURM_TMPDIR
 
 cd STARTUP
 
-# cd student_STARTUP
-# bash run.sh
-# cd $SLURM_TMPDIR
-# zip -r ~/scratch/student_models_na.zip $SLURM_TMPDIR/STARTUP/src/student_STARTUP/
-
 cd student_STARTUP_na
 bash run.sh
 cd $SLURM_TMPDIR
-zip -r ~/scratch/student_models.zip $SLURM_TMPDIR/STARTUP/src/student_STARTUP_na/
-
-# cd student_STARTUP_na
-# bash run.sh
-# cd $SLURM_TMPDIR
-# zip -r ~/scratch/student_models_frozenteacher.zip $SLURM_TMPDIR/STARTUP/src/student_STARTUP_na/
-
-# cd evaluation
-# bash run.sh
-# cd $SLURM_TMPDIR
-# zip -r ~/scratch/STARTUP/evaluation.zip $SLURM_TMPDIR/STARTUP/src/evaluation/
-
-# cd student_STARTUP
-# bash run_no_taskx.sh
-# cd $SLURM_TMPDIR
-# zip -r ~/scratch/student_models_taskx.zip $SLURM_TMPDIR/STARTUP/src/student_STARTUP/miniImageNet_source_no_taskx/
-
-
-# cd evaluation
-# bash run_no_taskx.sh
-# cd $SLURM_TMPDIR
-# zip -r ~/scratch/STARTUP/evaluation_no_taskx_80.zip $SLURM_TMPDIR/STARTUP/src/evaluation/
-
+zip -r ~/scratch/student_STARTUP_na.zip $SLURM_TMPDIR/STARTUP/student_STARTUP_na/

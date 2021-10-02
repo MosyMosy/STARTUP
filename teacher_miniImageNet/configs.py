@@ -1,6 +1,10 @@
 # TODO: Set the directory to save the model
 save_dir = './logs_deterministic'
 
-# TODO: Set the directory to the miniImageNet/tieredImageNet dataset
-miniImageNet_path = '/scratch/datasets/miniImageNet_full_resolution/train'
-tiered_ImageNet_path = '/scratch/datasets/tiered_imagenet/tiered_imagenet/original_split/train'
+# TODO: Please set the directory to the target datasets accordingly
+miniImageNet_path = '../datasets/miniImagenet'
+
+ISIC_path = "../datasets/ISIC2018"
+ChestX_path = "../datasets/ChestX-Ray8"
+CropDisease_path = "../datasets/plant-disease"
+EuroSAT_path = "../datasets/EuroSAT/2750"
