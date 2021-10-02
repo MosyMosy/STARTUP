@@ -20,7 +20,8 @@ import sys
 sys.path.append("../")
 import configs
 
-identity = lambda x:x
+# identity = lambda x:x
+def identity(x): return x
 
 
 def construct_subset(dataset, split):

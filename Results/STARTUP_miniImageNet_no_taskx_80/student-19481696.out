@@ -1,0 +1,160 @@
+Sun May 16 21:13:42 2021       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 460.73.01    Driver Version: 460.73.01    CUDA Version: 11.2     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  Tesla V100-SXM2...  Off  | 00000000:1C:00.0 Off |                    0 |
+| N/A   34C    P0    39W / 300W |      0MiB / 16160MiB |      0%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|  No running processes found                                                 |
++-----------------------------------------------------------------------------+
+ 
+ChestX
+5-way 1-shot
+Using Split:  ../datasets/split_seed_1/ChestX_unlabeled_20.csv
+Loading Model:  ../student_STARTUP/miniImageNet_source_no_taskx/ChestX_unlabeled_80/checkpoint_best.pkl
+Model checkpointed at epoch:  19
+
+0it [00:00, ?it/s]
+1it [00:02,  2.80s/it]
+2it [00:02,  1.23s/it]
+3it [00:03,  1.38it/s]
+...
+598it [01:25,  7.11it/s]
+599it [01:25,  7.13it/s]
+600it [01:26,  7.14it/s]
+600it [01:26,  6.97it/s]Test Acc (100 episodes) = 22.61% +- 1.14%
+Test Acc (200 episodes) = 22.70% +- 0.74%
+Test Acc (300 episodes) = 22.59% +- 0.59%
+Test Acc (400 episodes) = 22.64% +- 0.50%
+Test Acc (500 episodes) = 22.66% +- 0.46%
+Test Acc (600 episodes) = 22.67% +- 0.42%
+600 Test Acc = 22.67% +- 0.42%
+5-way 5-shot
+Using Split:  ../datasets/split_seed_1/ChestX_unlabeled_20.csv
+Loading Model:  ../student_STARTUP/miniImageNet_source_no_taskx/ChestX_unlabeled_80/checkpoint_best.pkl
+Model checkpointed at epoch:  19
+
+
+0it [00:00, ?it/s]
+1it [00:02,  2.74s/it]
+2it [00:03,  1.34s/it]
+3it [00:03,  1.12it/s]
+...
+599it [03:40,  3.08it/s]
+600it [03:40,  3.08it/s]
+600it [03:40,  2.72it/s]
+Test Acc (100 episodes) = 26.89% +- 1.02%
+Test Acc (200 episodes) = 26.85% +- 0.81%
+Test Acc (300 episodes) = 26.61% +- 0.64%
+Test Acc (400 episodes) = 26.52% +- 0.54%
+Test Acc (500 episodes) = 26.47% +- 0.48%
+Test Acc (600 episodes) = 26.46% +- 0.44%
+600 Test Acc = 26.46% +- 0.44%
+        Mean      95CI
+1  22.671111  0.415931
+5  26.455556  0.437267
+ISIC
+5-way 1-shot
+Using Split:  ../datasets/split_seed_1/ISIC_unlabeled_20.csv
+Loading Model:  ../student_STARTUP/miniImageNet_source_no_taskx/ISIC_unlabeled_80/checkpoint_best.pkl
+Model checkpointed at epoch:  6
+
+0it [00:00, ?it/s]
+1it [00:01,  1.18s/it]
+2it [00:01,  1.57it/s]
+3it [00:01,  2.14it/s]
+...
+598it [01:21,  8.73it/s]
+599it [01:22,  8.74it/s]
+600it [01:22,  8.76it/s]
+600it [01:22,  7.30it/s]Test Acc (100 episodes) = 34.65% +- 1.77%
+Test Acc (200 episodes) = 34.33% +- 1.23%
+Test Acc (300 episodes) = 34.00% +- 0.97%
+Test Acc (400 episodes) = 34.18% +- 0.82%
+Test Acc (500 episodes) = 34.07% +- 0.71%
+Test Acc (600 episodes) = 33.98% +- 0.66%
+600 Test Acc = 33.98% +- 0.66%
+5-way 5-shot
+Using Split:  ../datasets/split_seed_1/ISIC_unlabeled_20.csv
+Loading Model:  ../student_STARTUP/miniImageNet_source_no_taskx/ISIC_unlabeled_80/checkpoint_best.pkl
+Model checkpointed at epoch:  6
+
+
+0it [00:00, ?it/s]
+1it [00:02,  2.26s/it]
+2it [00:02,  1.20s/it]
+3it [00:03,  1.25it/s]
+...
+598it [03:30,  3.02it/s]
+599it [03:31,  3.01it/s]
+600it [03:31,  3.00it/s]
+600it [03:31,  2.84it/s]
+Test Acc (100 episodes) = 49.99% +- 1.45%
+Test Acc (200 episodes) = 50.02% +- 1.04%
+Test Acc (300 episodes) = 49.80% +- 0.82%
+Test Acc (400 episodes) = 49.83% +- 0.70%
+Test Acc (500 episodes) = 49.54% +- 0.63%
+Test Acc (600 episodes) = 49.53% +- 0.56%
+600 Test Acc = 49.53% +- 0.56%
+        Mean      95CI
+1  33.984444  0.663999
+5  49.531111  0.564743
+EuroSAT
+5-way 1-shot
+Using Split:  ../datasets/split_seed_1/EuroSAT_unlabeled_20.csv
+Loading Model:  ../student_STARTUP/miniImageNet_source_no_taskx/EuroSAT_unlabeled_80/checkpoint_best.pkl
+Model checkpointed at epoch:  934
+
+0it [00:00, ?it/s]
+1it [00:00,  1.07it/s]
+2it [00:01,  1.85it/s]
+3it [00:01,  2.53it/s]
+...
+598it [01:22,  8.79it/s]
+599it [01:22,  8.78it/s]
+600it [01:22,  8.78it/s]
+600it [01:22,  7.25it/s]Test Acc (100 episodes) = 63.89% +- 2.04%
+Test Acc (200 episodes) = 63.47% +- 1.41%
+Test Acc (300 episodes) = 63.17% +- 1.14%
+Test Acc (400 episodes) = 63.06% +- 0.98%
+Test Acc (500 episodes) = 63.22% +- 0.86%
+Test Acc (600 episodes) = 63.17% +- 0.81%
+600 Test Acc = 63.17% +- 0.81%
+5-way 5-shot
+Using Split:  ../datasets/split_seed_1/EuroSAT_unlabeled_20.csv
+Loading Model:  ../student_STARTUP/miniImageNet_source_no_taskx/EuroSAT_unlabeled_80/checkpoint_best.pkl
+Model checkpointed at epoch:  934
+
+
+0it [00:00, ?it/s]
+1it [00:01,  1.23s/it]
+2it [00:01,  1.07it/s]
+3it [00:02,  1.50it/s]
+...
+599it [03:37,  3.03it/s]
+600it [03:38,  3.03it/s]
+600it [03:38,  2.75it/s]
+Test Acc (100 episodes) = 82.27% +- 1.70%
+Test Acc (200 episodes) = 82.89% +- 1.06%
+Test Acc (300 episodes) = 82.62% +- 0.85%
+Test Acc (400 episodes) = 82.59% +- 0.75%
+Test Acc (500 episodes) = 82.77% +- 0.66%
+Test Acc (600 episodes) = 82.67% +- 0.61%
+600 Test Acc = 82.67% +- 0.61%
+        Mean      95CI
+1  63.168889  0.812692
+5  82.668889  0.607243
+
+CropDisease
+5-way 1-shot

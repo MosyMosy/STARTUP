@@ -38,6 +38,9 @@ import warnings
 
 from nx_ent import NTXentLoss
 
+import gc
+gc.collect()
+
 
 class projector_SIMCLR(nn.Module):
     '''
@@ -642,6 +645,8 @@ def train(model, clf, clf_SIMCLR,
 
     end = time.time()
     for i, ((X1, X2), y) in enumerate(trainloader):
+        torch.cuda.memory_summary(device=None, abbreviated=False)
+
         meters.update('Data_time', time.time() - end)
 
         current_lr = optimizer.param_groups[0]['lr']
@@ -684,17 +689,18 @@ def train(model, clf, clf_SIMCLR,
         log_probability_1 = F.log_softmax(logits_xtask_1, dim=1)
         log_probability_2 = F.log_softmax(logits_xtask_2, dim=1)
 
-        loss_xtask = (kl_criterion(log_probability_1, y) +
-                      kl_criterion(log_probability_2, y)) / 2
+        # No task loss
+        # loss_xtask = (kl_criterion(log_probability_1, y) +
+        #               kl_criterion(log_probability_2, y)) / 2
         
 
-        loss = loss_base + loss_SIMCLR + loss_xtask
+        loss = loss_base + loss_SIMCLR #+ loss_xtask
 
         loss.backward()
         optimizer.step()
 
         meters.update('Loss', loss.item(), 1)
-        meters.update('KL_Loss_target', loss_xtask.item(), 1)
+        # meters.update('KL_Loss_target', loss_xtask.item(), 1)
         meters.update('CE_Loss_source', loss_base.item(), 1)
         meters.update('SIMCLR_Loss_target', loss_SIMCLR.item(), 1)
 
@@ -839,7 +845,7 @@ def validate(model, clf, clf_simclr,
 
     log_probability = F.log_softmax(logits_xtask_test_all, dim=1)
 
-    loss_xtask = criterion_xtask(log_probability, ys_all)
+    # loss_xtask = criterion_xtask(log_probability, ys_all)
 
     if args.batch_validate:
         loss_SIMCLR = torch.stack(losses_SIMCLR).mean()
@@ -870,10 +876,10 @@ def validate(model, clf, clf_simclr,
 
     loss_base = nll_criterion(log_probability_base, ys_base_all)
 
-    loss = loss_xtask + loss_SIMCLR + loss_base
+    loss = loss_SIMCLR + loss_base #+loss_xtask
 
     meters.update('CE_Loss_source_test', loss_base.item(), 1)
-    meters.update('KL_Loss_target_test', loss_xtask.item(), 1)
+    # meters.update('KL_Loss_target_test', loss_xtask.item(), 1)
     meters.update('SIMCLR_Loss_target_test', loss_SIMCLR.item(), 1)
     meters.update('Loss_test', loss.item(), 1)
 

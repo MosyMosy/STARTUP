@@ -33,9 +33,9 @@ do
         --save_dir results/STARTUP_miniImageNet \
         --source_dataset $source \
         --target_dataset $target \
-        --subset_split ../datasets/split_seed_1/$target\_labeled_80.csv \
+        --subset_split ../datasets/split_seed_1/$target\_unlabeled_20.csv \
         --model resnet10 \
-        --embedding_load_path ../student_STARTUP/miniImageNet_source/$target\_unlabeled_20/checkpoint_best.pkl \
+        --embedding_load_path ../student_STARTUP/miniImageNet_source_no_taskx/$target\_unlabeled_80/checkpoint_best.pkl \
         --embedding_load_path_version 1
 
         # TODO: Please set --result_file appropriately. The prefix of the argument should be the same as 

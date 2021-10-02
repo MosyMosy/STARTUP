@@ -6,7 +6,8 @@ export CUDA_VISIBLE_DEVICES=0
 ##############################################################################################
 # Before running the commands, please take care of the TODO appropriately
 for target_testset in "EuroSAT" "ISIC" "CropDisease" "ChestX" "miniImageNet_test"
-do  # TODO: Please set the following argument appropriately 
+do 
+ # TODO: Please set the following argument appropriately 
     # --teacher_path: filename for the teacher model
     # --base_path: path to find base dataset
     # --dir: directory to save the student representation. 
@@ -17,7 +18,7 @@ do  # TODO: Please set the following argument appropriately
     --dir miniImageNet_source/$target_testset\_unlabeled_20 \
     --target_dataset $target_testset \
     --image_size 224 \
-    --target_subset_split datasets/split_seed_1/$target_testset\_unlabeled_20.csv \
+    --target_subset_split ../datasets/split_seed_1/$target_testset\_unlabeled_20.csv \
     --bsize 256 \
     --epochs 1000 \
     --save_freq 50 \
@@ -35,10 +36,11 @@ do  # TODO: Please set the following argument appropriately
     --eval_freq 2 \
     --batch_validate \
     --resume_latest 
+
+    zip -r ~/scratch/$target_testset\.zip $SLURM_TMPDIR/STARTUP/student_STARTUP/miniImageNet_source/$target_testset\_unlabeled_20
 done
 
 echo finish
-read
 
 # ##############################################################################################
 # # Train student representation using ImageNet as the source 
