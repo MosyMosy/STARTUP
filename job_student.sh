@@ -52,7 +52,6 @@ unzip ~/scratch/CD-FSL_Datasets/plant-disease.zip
 cd $SLURM_TMPDIR
 
 cd STARTUP
-cd src
 
 # cd student_STARTUP
 # bash run.sh

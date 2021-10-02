@@ -18,7 +18,7 @@ from io_utils import model_dict, parse_args
 from datasets import miniImageNet_few_shot, tiered_ImageNet_few_shot, ImageNet_few_shot
 
 import utils
-import wandb
+# import wandb
 
 from tqdm import tqdm
 import random
@@ -46,8 +46,8 @@ def train(base_loader, model, optimization, start_epoch, stop_epoch, params, log
             torch.save({'epoch':epoch, 'state':model.state_dict(), 
                         'optimizer': optimizer.state_dict()}, outfile)
 
-        wandb.log({'loss': perf['Loss/avg']}, step=epoch+1)
-        wandb.log({'top1': perf['top1/avg'],
+        print({'loss': perf['Loss/avg']}, step=epoch+1)
+        print({'top1': perf['top1/avg'],
                 'top5': perf['top5/avg'],
                 'top1_per_class': perf['top1_per_class/avg'],
                 'top5_per_class': perf['top5_per_class/avg']}, step=epoch+1)
@@ -135,11 +135,11 @@ if __name__=='__main__':
     logger.info(f"Image_size: {image_size}")
     logger.info(f"Optimization: {optimization}")
 
-    wandb.init(project='cross_task_distillation',
-               group=__file__,
-               name=f'{__file__}_{params.checkpoint_dir}')
+    # wandb.init(project='cross_task_distillation',
+    #            group=__file__,
+    #            name=f'{__file__}_{params.checkpoint_dir}')
 
-    wandb.config.update(params)
+    # wandb.config.update(params)
 
     model = model.cuda()
 

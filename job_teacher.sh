@@ -52,9 +52,6 @@ unzip ~/scratch/CD-FSL_Datasets/plant-disease.zip
 cd $SLURM_TMPDIR
 
 cd STARTUP
-cd src
-
-
 cd teacher_miniImageNet_na
 bash run.sh
 cd $SLURM_TMPDIR
