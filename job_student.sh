@@ -5,14 +5,14 @@
 #SBATCH --mail-type=FAIL
 #SBATCH --mail-type=REQUEUE
 #SBATCH --mail-type=ALL
-#SBATCH --job-name=student
+#SBATCH --job-name=STARTUP_Student
 #SBATCH --output=%x-%j.out
 #SBATCH --nodes=1
 #SBATCH --gres=gpu:4
-#SBATCH --ntasks-per-node=40
+#SBATCH --ntasks-per-node=32
 #SBATCH --mem=127000M
-#SBATCH --time=2-05:15
-#SBATCH --account=rrg-ebrahimi
+#SBATCH --time=3-00:00
+#SBATCH --account=def-ebrahimi
 
 nvidia-smi
 
