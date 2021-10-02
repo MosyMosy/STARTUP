@@ -1,8 +1,5 @@
 # user-defined files
-*.log
-*.tar
-*.pkl
-*.csv
+
 wandb/
 
 # Byte-compiled / optimized / DLL files
