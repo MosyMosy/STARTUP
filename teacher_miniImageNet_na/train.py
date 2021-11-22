@@ -87,7 +87,7 @@ if __name__=='__main__':
         if params.dataset == "miniImageNet":
             # Original Batchsize is 16
             datamgr = miniImageNet_few_shot.SimpleDataManager(image_size, batch_size=bsize, split=params.subset_split)
-            base_loader = datamgr.get_data_loader(aug=params.train_aug, num_workers=8)
+            base_loader = datamgr.get_data_loader(aug=params.train_aug, num_workers=1)
             params.num_classes = 64
         elif params.dataset == 'tiered_ImageNet':
             image_size = 84
@@ -102,7 +102,7 @@ if __name__=='__main__':
             datamgr = ImageNet_few_shot.SimpleDataManager(
                 image_size, batch_size=bsize, split=params.subset_split)
             base_loader = datamgr.get_data_loader(
-                aug=params.train_aug, num_workers=8)
+                aug=params.train_aug, num_workers=1)
             print("Number of images", len(base_loader.dataset))
             params.num_classes = 1000
         else:
