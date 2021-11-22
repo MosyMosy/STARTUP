@@ -17,6 +17,7 @@ def create_resnet18():
 
 model_dict = {
             'ResNet10': models.ResNet10,
+            'ResNet10_GN': models.ResNet10_GN,
             'ResNet12': create_resnet12, 
             'ResNet18': create_resnet18,
 }
