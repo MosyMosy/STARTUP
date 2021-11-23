@@ -40,6 +40,8 @@ def checkpoint(model, save_path):
     torch.save(sd, save_path)
     return sd
 
+checkpoint(load_checkpoint(models.ResNet10(
+), "teacher_miniImageNet/logs_deterministic/checkpoints/miniImageNet/ResNet10_GN_baseline_256_aug/399.tar", torch.device("cpu")), "baseline_teacher_GN/checkpoint_best.pkl")
 
 checkpoint(load_checkpoint(models.ResNet10(
-), "teacher_miniImageNet_na/logs_deterministic/checkpoints/miniImageNet/ResNet10_baseline_256_aug/399.tar", torch.device("cpu")), "baseline_na_teacher/checkpoint_best.pkl")
+), "teacher_miniImageNet_na/logs_deterministic/checkpoints/miniImageNet/ResNet10_GN_baseline_256_aug/399.tar", torch.device("cpu")), "baseline_na_teacher_GN/checkpoint_best.pkl")
