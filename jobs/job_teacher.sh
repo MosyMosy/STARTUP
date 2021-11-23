@@ -55,4 +55,4 @@ cd teacher_miniImageNet
 
 bash run.sh
 cd $SLURM_TMPDIR
-cp -r $SLURM_TMPDIR/STARTUP/teacher_miniImageNet_na/ ~/scratch/STARTUP/
+cp -r $SLURM_TMPDIR/STARTUP/teacher_miniImageNet/ ~/scratch/STARTUP/
