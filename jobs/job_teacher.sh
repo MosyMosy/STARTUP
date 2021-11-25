@@ -52,6 +52,7 @@ cd STARTUP
 
 # cd teacher_miniImageNet_na
 # bash run.sh
+# cd ..
 
 cd teacher_miniImageNet
 bash run.sh
